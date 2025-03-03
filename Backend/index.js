@@ -7,7 +7,7 @@ const patientsRouter = require('./routes/patients');
 const doctorsRouter = require('./routes/doctors');
 const appoinmentsRouter = require('./routes/appointments')
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 const path = require('path');
  
 app.use(cors());
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
  
 // Connect to MongoDB
 mongoose.connect(
-    "mongodb+srv://vaibhav:vaibhav@cluster0.mk1td.mongodb.net/",
+    "mongodb+srv://vaibhav:vaibhav@cluster0.mk1td.mongodb.net/test",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
