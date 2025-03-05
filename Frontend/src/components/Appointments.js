@@ -16,7 +16,7 @@ const Appointments = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/appointments")
+      .get("https://hms-2-csw5.onrender.com/appointments")
       .then((response) => setAppointments(response.data))
       .catch((error) => console.error("Error fetching appointments:", error));
   }, []);
@@ -25,7 +25,7 @@ const Appointments = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/appointments/add", newAppointment)
+      .post("https://hms-2-csw5.onrender.com/appointments/add", newAppointment)
       .then((response) => {
         console.log(response.data);
         setAppointments([...appointments, response.data]);
@@ -42,7 +42,7 @@ const Appointments = () => {
     e.preventDefault();
     axios
       .post(
-        `http://localhost:5000/appointments/update/${id}`,
+        `https://hms-2-csw5.onrender.com/appointments/update/${id}`,
         selectedAppointment
       )
       .then((response) => {
@@ -64,7 +64,7 @@ const Appointments = () => {
 
   const handleDeleteAppointment = (id) => {
     axios
-      .delete(`http://localhost:5000/appointments/delete/${id}`)
+      .delete(`https://hms-2-csw5.onrender.com/appointments/delete/${id}`)
       .then((response) => {
         console.log(response.data);
         setAppointments(
