@@ -15,7 +15,7 @@ app.use(bodyParser.json());
  
 // Connect to MongoDB
 mongoose.connect(
-    "mongodb+srv://vaibhav:vaibhav@cluster0.mk1td.mongodb.net/test",
+    "mongodb+srv://vaibhav:vaibhav@cluster0.mk1td.mongodb.net/",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
