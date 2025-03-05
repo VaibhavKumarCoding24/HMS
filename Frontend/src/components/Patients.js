@@ -17,7 +17,7 @@ const Patients = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/patients")
+      .get("https://hms-2-csw5.onrender.com/patients")
       .then((response) => setPatients(response.data))
       .catch((error) => console.error("Error fetching patients:", error));
   }, []);
@@ -26,7 +26,7 @@ const Patients = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/patients/add", newPatient)
+      .post("https://hms-2-csw5.onrender.com/patients/add", newPatient)
       .then((response) => {
         console.log(response.data);
         setPatients([...patients, response.data]);
@@ -39,7 +39,7 @@ const Patients = () => {
     e.preventDefault();
 
     axios
-      .post(`http://localhost:5000/patients/update/${id}`, selectedPatient)
+      .post(`https://hms-2-csw5.onrender.com/patients/update/${id}`, selectedPatient)
       .then((response) => {
         const updatePat = {
           ...selectedPatient,
@@ -60,7 +60,7 @@ const Patients = () => {
 
   const handleDeletePatient = (id) => {
     axios
-      .delete(`http://localhost:5000/patients/delete/${id}`)
+      .delete(`https://hms-2-csw5.onrender.com/patients/delete/${id}`)
       .then((response) => {
         console.log(response.data);
         setSelectedPatient(null);
