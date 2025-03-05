@@ -23,7 +23,7 @@ const Doctors = () => {
     useEffect(
         () => {
             axios
-                .get('http://localhost:5000/doctors')
+                .get('https://hms-2-csw5.onrender.com/doctors')
                 .then(
                     response =>
                         setDoctors(response.data))
@@ -38,7 +38,7 @@ const Doctors = () => {
             e.preventDefault();
             axios
                 .post(
-'http://localhost:5000/doctors/add', newDoctor)
+'https://hms-2-csw5.onrender.com/doctors/add', newDoctor)
                 .then(
                     response => {
                         console.log("doc", response.data);
@@ -64,7 +64,7 @@ const Doctors = () => {
             e.preventDefault();
             axios
                 .post(
-`http://localhost:5000/doctors/update/${id}`, selectedDoctor)
+`https://hms-2-csw5.onrender.com/doctors/update/${id}`, selectedDoctor)
                 .then(response => {
                     const updateDoc = {
                         ...selectedDoctor,
@@ -88,7 +88,7 @@ const Doctors = () => {
  
     const handleDeleteDoctor = (id) => {
         axios.delete(
-`http://localhost:5000/doctors/delete/${id}`)
+`https://hms-2-csw5.onrender.com/doctors/delete/${id}`)
             .then(response => {
                 console.log(response.data);
                 setDoctors(
